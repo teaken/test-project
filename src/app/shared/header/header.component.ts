@@ -62,7 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.userBalance += balance.amount
     }
   }
-  subscribeWalet() {
+  subscribeWalet() { //tried to do subscription but it didnot work
     this.currentUserQuery.subscribeToMore({
       document: this.WALLET_SUBSCRIPTION,
       updateQuery: (prev, { subscriptionData }) => {
