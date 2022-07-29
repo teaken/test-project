@@ -1,0 +1,19 @@
+<ng-container *ngIf="!(boxesResult | async)">
+    <app-loader></app-loader>
+
+</ng-container>
+<div class="w-full flex justify-start flex-wrap">
+        <div *ngFor="let box of boxesResult | async" class="w-2/12 flex flex-col justify-between m-3 h-70 bg-slate-400 border rounded-md ">
+            <div class="!h-3/6">
+                <img class="h-full w-full" src="{{box.node.iconUrl}}">
+
+            </div>
+            <div class="p-2 h-1/4">
+                <p class="font-bold text-ellipsis overflow-hidden whitespace-nowrap">{{box.node.name}}</p>
+                <div>{{box.node.cost}}</div>
+            </div>
+          
+            <button [routerLink]="['/detailed']" [queryParams]="{id: box.node.id}"  class="h-1/6 bg-slate-800 text-white rounded-md">Open the box</button>
+       </div> 
+ 
+</div>

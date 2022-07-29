@@ -1,0 +1,15 @@
+<ng-container *ngIf="(toggleLoader$ | async) && !errorCode">
+    <app-loader></app-loader>
+
+</ng-container>
+<div class="flex justify-center">
+    <ng-container *ngIf="boxDetails">
+        <div class="flex justify-center flex-col items-center">
+            <img class="w-full" src="../../../assets/gift.svg">
+            <p>{{boxDetails.itemVariant.name}}</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="errorCode">
+            <p class="font-bold text-lg text-center">{{errorCode}}</p>
+    </ng-container>
+</div>
